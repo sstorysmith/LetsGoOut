@@ -14,19 +14,25 @@
 </head>
 
     <body>
-        <div class="jumbotron"><h1>Lets Go Out</h1></div>
-        <div class="container">
-            <div class="row">
+        <div class="jumbotron"><h1 class="text-center font-weight-bold font-italic">Lets Go Out</h1></div>
+        <div class="container border border-success">
                 <form>
-                    <div class="form-group">
-                        <label for="location">Location</label>
-                        <input type="text" class="form-control" id="location" placeholder="Enter Location">
-                        <small id="locationHelp" class="form-text text-muted">Enter full City Name</small>
+                    <div class="form-group row">
+                        <label for="location" class="col-sm-12 text-center mt-3 h2">Location</label>
+                        <input type="text" class="form-control col-sm-12 ml-1 mr-1" id="location" placeholder="Enter Location">
+                        <small id="locationHelp" class="form-text text-muted text-center col-sm-12">Enter full City Name</small>
                     </div> 
-                    <button type="submit" id="submit" class="btn btn-primary">Lets GO!</button>
+                    <button type="submit" id="submit" class="col-sm-12 mb-3 btn btn-success">Lets GO!</button>
                 </form>
-            </div>
         </div>
+        <div class="row">
+            <p class="col-sm-12 mt-5 mr-2 ml-2 h4 text-center">
+                Life's too short to sit around and just watch TV. It's time to get off the couch and experience all that your local nightlife has 
+                to offer! Whether it's a dinner and a concert, or catching a movie and some drinks, Lets Go Out will help to organize a exciting and 
+                spontanious night out on the town.
+            </p>
+        </div>
+
       
         <!-- custom JS File -->
         <script src="assets/js/app.js"></script>
