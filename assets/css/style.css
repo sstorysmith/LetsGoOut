@@ -1,2 +1,18 @@
 /* custom styles */
+body {
+    background: url("../images/street.jpg") no-repeat center ;
+    background-size: cover;
+}
+#main {
+    text-align: center;
+    font-size: 35px;
+    color: white
+}
+#head {
+    z-index: 5;
+}
+button {
+    background-color: green;
+    margin-right: 10px
+}
 
