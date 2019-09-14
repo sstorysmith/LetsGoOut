@@ -80,7 +80,7 @@ function searchYelp() {
             const response = data.businesses;
 
                //picks random restaurant from the 50 it returns [YELP]
-            let randomRestaurant = Math.floor(Math.random() * response.length + 1);
+            let randomRestaurant = Math.floor(Math.random() * response.length) +1;
             restaurantName = response[randomRestaurant].name;
             restaurant_url = response[randomRestaurant].url;
             restaurantImage_url = response[randomRestaurant].image_url;
@@ -111,8 +111,7 @@ function searchMovies() {
         console.log(response)
        
         //picks random Movie from however many new ones it returns [Movie API]
-         let randomMovie = Math.floor(Math.random() * response.length + 1)
-         alert(randomMovie)
+         let randomMovie = Math.floor(Math.random() * response.length)
             let movieName = response[randomMovie].title;
             let movieDescription = response[randomMovie].shortDescription;
             const posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
