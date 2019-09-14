@@ -53,7 +53,7 @@ function searchEventBrite() {
 
 function searchYelp() {
     let location = $("#location").val().trim()
-    const queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}?limit=20?open_now=true?categories=food`
+    const queryURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}?limit=20?open_now=true?categories=restaurants`
  
     $.ajax({
         url: queryURL,
