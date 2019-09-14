@@ -1,4 +1,4 @@
-//custom JS here
+//custom JS here.
 $(document).ready(function(){
     // event brite API Key: NYPPF5ZFS2WQZMMQSIJJ
     // Fandango API Key: 7sys79jddrrq8m26yucpf7zb  Secret: hGK9N44PtU
@@ -26,8 +26,11 @@ let eventEnd;
 let eventUrl;
 let eventimageUrl;
 
-let movieName
-let movieDescription
+let movieName;
+let movieDescription;
+let movieRating;
+let posterURL;
+let movieTicketURL
 
 
 function searchEventBrite() {
@@ -112,10 +115,10 @@ function searchMovies() {
        
         //picks random Movie from however many new ones it returns [Movie API]
          let randomMovie = Math.floor(Math.random() * response.length + 1)
-            let movieName = response[randomMovie].title;
-            let movieDescription = response[randomMovie].shortDescription;
-            const posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
-            let movieRating = response[randomMovie].ratings[0].code
+            movieName = response[randomMovie].title;
+            movieDescription = response[randomMovie].shortDescription;
+            posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
+            movieRating = response[randomMovie].ratings[0].code
             
 
          
@@ -128,14 +131,9 @@ function searchMovies() {
             for(let i = 0; i < response[randomMovie].showtimes.length; i++){
                 let theatre = response[randomMovie].showtimes[i].theatre.name;
                 let showtimes = response[randomMovie].showtimes[i].dateTime;
-                // function convert(showtimes) {
-                //     return moment(showtimes, 'HH:mm:ss').format('h:mm:ss A');
-                // }
-                // console.log(showtimes);
-                // var justTime = dateTime;
-                //     justTime = dateTime.split('T')[0];
-                //     console.log(justTime);
-                let movieTicketURL = response[randomMovie].showtimes[i].ticketURI;
+
+                movieTicketURL = response[randomMovie].showtimes[i].ticketURI;
+              
                 console.log("Showtimes:")
                 console.log(theatre)
                 console.log(showtimes);
