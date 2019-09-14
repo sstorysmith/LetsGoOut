@@ -1,12 +1,14 @@
 /* custom styles */
 body {
-    background: url("../images/street.jpg") no-repeat center ;
+    /* background: url("../images/street.jpg") no-repeat center ; */
     background-size: cover;
+    color:black;
+
 }
 #main {
     text-align: center;
     font-size: 35px;
-    color: white
+    color: black
 }
 #head {
     z-index: 5;
@@ -15,4 +17,9 @@ button {
     background-color: green;
     margin-right: 10px
 }
+.dataPic {
+    height: 250px;
+    width: auto; 
+}
+
 
