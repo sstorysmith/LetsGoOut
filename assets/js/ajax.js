@@ -10,6 +10,7 @@ $(document).ready(function(){
         e.preventDefault();
         searchEventBrite();
         searchYelp();
+        searchMovies();
     })
  
 });
@@ -82,6 +83,7 @@ function searchYelp() {
 }
 
 function searchMovies() {
+    const today = new Date().toISOString().slice(0, 10);
     let location = $("#location").val().trim()
     const queryURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=a5ht9r228dugghx2hf2cn7qa";
  
@@ -91,14 +93,36 @@ function searchMovies() {
         dataType: "json",
 
     }).done(function(data) { 
+        const response = data;
+        console.log(response)
        
-        console.log("Movies");
-        console.log(data);
-         const response = data.movies;
         //picks random Movie from however many new ones it returns [Movie API]
-         let randomMovie = Math.floor(Math.random() * data.movies)
-            let movieName = response[randomMovie].title.text;
-            let movieDescription = response[randomMovie].shortDescription.text;
+         let randomMovie = Math.floor(Math.random() * response.length + 1)
+         alert(randomMovie)
+            let movieName = response[randomMovie].title;
+            let movieDescription = response[randomMovie].shortDescription;
+            const posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
+            let movieRating = response[randomMovie].ratings[0].code
+            
+            let showtimesArray = response[randomMovie].showtimes;
+
+         
+            
+            console.log(movieName);
+            console.log(movieRating);
+            console.log(movieDescription);
+            console.log(posterURL);
+
+            for(let i = 0; i < response[randomMovie].showtimes.length; i++){
+                let theatre = response[randomMovie].showtimes[i].theatre.name;
+                let showtimes = response[randomMovie].showtimes[i].dateTime;
+                let movieTicketURL = response[randomMovie].showtimes[i].ticketURI;
+                console.log("Showtimes:")
+                console.log(theatre)
+                console.log(showtimes);
+                console.log(movieTicketURL);
+   
+               }
         });
 
 
