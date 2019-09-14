@@ -81,23 +81,25 @@ function searchYelp() {
 
 }
 
-//function todaysDate() {
-//     let today = new Date().toISOString().slice(0, 10);
-//     console.log(today);
-// }
-//     function searchMovies() {
-//         let location = $("#location").val().trim();
-//         const queryURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=a5ht9r228dugghx2hf2cn7qa&releasedate";
-//         $.ajax({
-//             type: 'GET',
-//             url: queryURL,
-//             dataType: "json",
-//         }).done(function (data) {
-//             let response = data.movies;
-//             let movieName = "";
-//             let EventDescription = "";
-//             let EventTime = "";
-//             console.log("Movies");
-//         });
-//     }
-// }
+function searchMovies() {
+    let location = $("#location").val().trim()
+    const queryURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=a5ht9r228dugghx2hf2cn7qa";
+ 
+    $.ajax({
+        type: 'GET',
+        url: queryURL,
+        dataType: "json",
+
+    }).done(function(data) { 
+       
+        console.log("Movies");
+        console.log(data);
+         const response = data.movies;
+        //picks random Movie from however many new ones it returns [Movie API]
+         let randomMovie = Math.floor(Math.random() * data.movies)
+            let movieName = response[randomMovie].title.text;
+            let movieDescription = response[randomMovie].shortDescription.text;
+        });
+
+
+    }
