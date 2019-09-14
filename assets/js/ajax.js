@@ -32,7 +32,7 @@ let movieDescription
 
 function searchEventBrite() {
     let location = $("#location").val().trim()
-    const queryURL = "https://private-anon-15caf22989-eventbriteapiv3public.apiary-proxy.com/v3/events/search/?token=NYPPF5ZFS2WQZMMQSIJJ&location.address=" + location + "&location.within=20mi&start_date.keyword=today"
+    const queryURL = "https://private-anon-15caf22989-eventbriteapiv3public.apiary-proxy.com/v3/events/search/?token=NYPPF5ZFS2WQZMMQSIJJ&location.address=" + location + "&location.within=20mi&start_date.keyword=today&categories=103"
  
     $.ajax({
         type: 'GET',
@@ -112,13 +112,11 @@ function searchMovies() {
        
         //picks random Movie from however many new ones it returns [Movie API]
          let randomMovie = Math.floor(Math.random() * response.length + 1)
-         alert(randomMovie)
             let movieName = response[randomMovie].title;
             let movieDescription = response[randomMovie].shortDescription;
             const posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
             let movieRating = response[randomMovie].ratings[0].code
             
-            let showtimesArray = response[randomMovie].showtimes;
 
          
             
@@ -130,12 +128,19 @@ function searchMovies() {
             for(let i = 0; i < response[randomMovie].showtimes.length; i++){
                 let theatre = response[randomMovie].showtimes[i].theatre.name;
                 let showtimes = response[randomMovie].showtimes[i].dateTime;
+                // function convert(showtimes) {
+                //     return moment(showtimes, 'HH:mm:ss').format('h:mm:ss A');
+                // }
+                // console.log(showtimes);
+                // var justTime = dateTime;
+                //     justTime = dateTime.split('T')[0];
+                //     console.log(justTime);
                 let movieTicketURL = response[randomMovie].showtimes[i].ticketURI;
                 console.log("Showtimes:")
                 console.log(theatre)
                 console.log(showtimes);
                 console.log(movieTicketURL);
-   
+                
                }
         });
 
