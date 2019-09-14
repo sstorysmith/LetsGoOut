@@ -115,6 +115,7 @@ function searchMovies() {
        
         //picks random Movie from however many new ones it returns [Movie API]
          let randomMovie = Math.floor(Math.random() * response.length)
+         
             movieName = response[randomMovie].title;
             movieDescription = response[randomMovie].shortDescription;
             posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
