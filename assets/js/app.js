@@ -94,7 +94,7 @@ $(document).ready(function(){
         $("body").append("<p class='offset-lg-4'>"+ eventDescription +"</p>")
         $("body").append("<p class='offset-lg-4'>'Starts at'"+ eventStart +"</p>")
         $("body").append("<p class='offset-lg-4'>'Ends at'"+ eventEnd +"</p>")
-        $("body").append("<a class='offset-lg-5' target='_blank' href=" + eventUrl + "> Visit Yelp Page </a>" )
+        $("body").append("<a class='offset-lg-5' target='_blank' href=" + eventUrl + "> Visit EventBrite</a>" )
         }
         else {
         $("body").append("<h2>'Your movie for Tonight is")
