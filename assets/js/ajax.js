@@ -26,8 +26,11 @@ let eventEnd;
 let eventUrl;
 let eventimageUrl;
 
-let movieName
-let movieDescription
+let movieName;
+let movieDescription;
+let movieRating;
+let posterURL;
+let movieTicketURL
 
 
 function searchEventBrite() {
@@ -112,10 +115,11 @@ function searchMovies() {
        
         //picks random Movie from however many new ones it returns [Movie API]
          let randomMovie = Math.floor(Math.random() * response.length)
-            let movieName = response[randomMovie].title;
-            let movieDescription = response[randomMovie].shortDescription;
-            const posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
-            let movieRating = response[randomMovie].ratings[0].code
+         
+            movieName = response[randomMovie].title;
+            movieDescription = response[randomMovie].shortDescription;
+            posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
+            movieRating = response[randomMovie].ratings[0].code
             
             let showtimesArray = response[randomMovie].showtimes;
 
@@ -129,7 +133,7 @@ function searchMovies() {
             for(let i = 0; i < response[randomMovie].showtimes.length; i++){
                 let theatre = response[randomMovie].showtimes[i].theatre.name;
                 let showtimes = response[randomMovie].showtimes[i].dateTime;
-                let movieTicketURL = response[randomMovie].showtimes[i].ticketURI;
+                movieTicketURL = response[randomMovie].showtimes[i].ticketURI;
                 console.log("Showtimes:")
                 console.log(theatre)
                 console.log(showtimes);

@@ -84,7 +84,7 @@ $(document).ready(function(){
     }
 
     let displayEvent = function () {
-        if (movie === false) {
+        if (movie == false) {
         $("body").append("<h2  class='offset-lg-4'>'Your event for Tonight is")
         $("body").append("<h2 class='offset-lg-4'>"+ eventName +"</h2>");
         $("body").append("<img class='dataPic offset-lg-4' src=" + eventimageUrl + ">")
@@ -94,15 +94,16 @@ $(document).ready(function(){
         $("body").append("<p class='offset-lg-4'>'Ends at'"+ eventEnd +"</p>")
         $("body").append("<a class='offset-lg-5' target='_blank' href=" + eventUrl + "> Visit Yelp Page </a>" )
         }
-        else if (movie === true) {
+        else {
         $("body").append("<h2>'Your movie for Tonight is")
         $("body").append("<h2 class='offset-lg-4'>"+ movieName +"</h2>");
-        // $("body").append("<img class='dataPic offset-lg-4' src=" + movieImage_url + ">")
+        $("body").append("<img class='dataPic offset-lg-4' src=" + posterURL + ">")
         $("body").append("<br>")
         $("body").append("<p class='offset-lg-4'>"+ movieDescription +"</p>")
-        // $("body").append("<a class='offset-lg-5' target='_blank' href=" + movie_url + "> Visit Yelp Page </a>" )
-        }
+        $("body").append("<p class='offset-lg-4'>'Rated: '"+ movieRating +"</p>")
+        $("body").append("<a class='offset-lg-5' target='_blank' href=" + movieTicketURL + "> Visit Yelp Page </a>" )
+        
     }
-
+    }
 
 });
