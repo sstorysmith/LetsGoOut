@@ -14,6 +14,20 @@ $(document).ready(function(){
     })
  
 });
+//global variables 
+let restaurantName;
+let restaurantImage_url;
+let restaurant_url;
+
+let eventName;
+let eventDescription;
+let eventStart;
+let eventEnd;
+let eventUrl;
+let eventimageUrl;
+
+let movieName
+let movieDescription
 
 
 function searchEventBrite() {
@@ -32,19 +46,19 @@ function searchEventBrite() {
         const response = data.events;
         //picks random event from the 50 it returns [EVENT BRITE]
          let randomEvent = Math.floor(Math.random() * data.events.length + 1)
-            let eventName = response[randomEvent].name.text;
-            let eventDescription = response[randomEvent].description.text;
-            let eventStart = response[randomEvent].start.local;
-            let eventEnd = response[randomEvent].end.local;
-            let eventUrl = response[randomEvent].url;
-            let imageUrl = response[randomEvent].logo.original.url
+            eventName = response[randomEvent].name.text;
+            eventDescription = response[randomEvent].description.text;
+            eventStart = response[randomEvent].start.local;
+            eventEnd = response[randomEvent].end.local;
+            eventUrl = response[randomEvent].url;
+            eventimageUrl = response[randomEvent].logo.original.url
 
             console.log(eventName);
             console.log(eventDescription);
             console.log(eventStart);
             console.log(eventEnd);
             console.log(eventUrl)
-            console.log(imageUrl)
+            console.log(eventimageUrl)
 
     });
 
@@ -67,14 +81,14 @@ function searchYelp() {
 
                //picks random restaurant from the 50 it returns [YELP]
             let randomRestaurant = Math.floor(Math.random() * response.length + 1);
-            let name = response[randomRestaurant].name;
-            let business_url = response[randomRestaurant].url;
-            let image_url = response[randomRestaurant].image_url;
+            restaurantName = response[randomRestaurant].name;
+            restaurant_url = response[randomRestaurant].url;
+            restaurantImage_url = response[randomRestaurant].image_url;
 
 
-            console.log(name);
-            console.log(business_url);
-            console.log(image_url);
+            console.log(restaurantName);
+            console.log(restaurant_url);
+            console.log( restaurantImage_url);
     
         }
      });      
