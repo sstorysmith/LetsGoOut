@@ -1,4 +1,4 @@
-//custom JS here
+//custom JS here.
 $(document).ready(function(){
     // event brite API Key: NYPPF5ZFS2WQZMMQSIJJ
     // Fandango API Key: 7sys79jddrrq8m26yucpf7zb  Secret: hGK9N44PtU
@@ -83,7 +83,7 @@ function searchYelp() {
             const response = data.businesses;
 
                //picks random restaurant from the 50 it returns [YELP]
-            let randomRestaurant = Math.floor(Math.random() * response.length + 1);
+            let randomRestaurant = Math.floor(Math.random() * response.length) +1;
             restaurantName = response[randomRestaurant].name;
             restaurant_url = response[randomRestaurant].url;
             restaurantImage_url = response[randomRestaurant].image_url;
@@ -115,7 +115,7 @@ function searchMovies() {
        
         //picks random Movie from however many new ones it returns [Movie API]
          let randomMovie = Math.floor(Math.random() * response.length)
-         alert(randomMovie)
+         
             movieName = response[randomMovie].title;
             movieDescription = response[randomMovie].shortDescription;
             posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
