@@ -1,4 +1,4 @@
-//custom JS here
+//custom JS here.
 $(document).ready(function(){
     // event brite API Key: NYPPF5ZFS2WQZMMQSIJJ
     // Fandango API Key: 7sys79jddrrq8m26yucpf7zb  Secret: hGK9N44PtU
