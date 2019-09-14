@@ -54,13 +54,15 @@ $(document).ready(function(){
         $('#movie').on("click", function(){
             movie = true;
             console.log(movie)
-            displayFood()
+            displayFood();
+            displayEvent();
+
         })
         $('#show').on("click", function(){
             movie = false;
             console.log(movie);
-            displayFood ()
-            displayEvent()
+            displayFood ();
+            displayEvent();
         })
     }
 
@@ -84,7 +86,7 @@ $(document).ready(function(){
     }
 
     let displayEvent = function () {
-        if (movie == false) {
+        if (movie === false) {
         $("body").append("<h2  class='offset-lg-4'>'Your event for Tonight is")
         $("body").append("<h2 class='offset-lg-4'>"+ eventName +"</h2>");
         $("body").append("<img class='dataPic offset-lg-4' src=" + eventimageUrl + ">")
