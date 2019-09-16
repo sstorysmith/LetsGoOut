@@ -173,7 +173,7 @@ let hungryQuestion = function () {
     function searchMovies() {
         const today = new Date().toISOString().slice(0, 10);
         let location = localStorage.getItem("location")
-        const queryURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=a5ht9r228dugghx2hf2cn7qa";
+        const queryURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=a5ht9r228dugghx2hf2cn7qa";
      
         $.ajax({
             type: 'GET',
