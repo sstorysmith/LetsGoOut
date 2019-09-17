@@ -136,8 +136,9 @@ let hungryQuestion = function () {
         $("#event").append("<br>")
         $("#event").append("<p'>"+ movieDescription +"</p>")
         $("#event").append("<p'>'Rated: '"+ movieRating +"</p>")
-        $("#event").append("<a class='target='_blank' href=" + movieTicketURL + "> Visit Yelp Page </a>" )
+        $("#event").append("<a class='target='_blank' href=" + movieTicketURL + "> Get Your Ticket </a>" )
         },1500)
+
     }
 
 
@@ -181,7 +182,7 @@ let hungryQuestion = function () {
     function searchMovies() {
         const today = new Date().toISOString().slice(0, 10);
         let location = localStorage.getItem("location")
-        const queryURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=a5ht9r228dugghx2hf2cn7qa";
+        const queryURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate=" + today + "&zip=" + location + "&api_key=5m65qnrcm3fub6kecc36gqpk";
      
         $.ajax({
             type: 'GET',
