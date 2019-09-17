@@ -170,7 +170,7 @@ let hungryQuestion = function () {
                 console.log( restaurantImage_url);
                 setTimeout(function(){
                 displayFoodOptions();
-                },4000)
+                },3500)
         
             }
          });      
