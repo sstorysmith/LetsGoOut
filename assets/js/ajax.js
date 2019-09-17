@@ -131,7 +131,7 @@ let hungryQuestion = function () {
         $("#event").append("<br>")
         $("#event").append("<p'>"+ movieDescription +"</p>")
         $("#event").append("<p'>'Rated: '"+ movieRating +"</p>")
-        $("#event").append("<a class='target='_blank' href=" + movieTicketURL + "> Visit Yelp Page </a>" )
+        $("#event").append("<a class='target='_blank' href=" + movieTicketURL + "> Get Your Ticket </a>" )
     }
 
 
