@@ -74,20 +74,28 @@ $(document).ready(function(){
     let displayFood = function () {
         if (hungry === true) {
             $("#main").empty();
-            $("#main").text("Your Restaurant for tonight is ")
+            setTimeout(function(){
+                $("body").append("<h2  class='offset-lg-4'>Your restaurant for Tonight is")
+            },4000)
+            setTimeout(function(){
             $("body").append("<h2 class='offset-lg-4'>"+ restaurantName +"</h2>");
             $("body").append("<img class='dataPic offset-lg-4' src=" + restaurantImage_url + ">")
             $("body").append("<br>")
             $("body").append("<a class='offset-lg-5' target='_blank' href=" + restaurant_url + "> Visit Yelp Page </a>" )
+            },6000)
         }
         else if (hungry === false) {
+            $("#main").empty();
             console.log("not hungry")
         }
     }
 
     let displayEvent = function () {
         if (movie === false) {
-        $("body").append("<h2  class='offset-lg-4'>'Your event for Tonight is")
+            setTimeout(function(){
+        $("body").append("<h2  class='offset-lg-4'>Your event for Tonight is")
+            },500)
+            setTimeout(function(){
         $("body").append("<h2 class='offset-lg-4'>"+ eventName +"</h2>");
         $("body").append("<img class='dataPic offset-lg-4' src=" + eventimageUrl + ">")
         $("body").append("<br>")
@@ -95,15 +103,20 @@ $(document).ready(function(){
         $("body").append("<p class='offset-lg-4'>'Starts at'"+ eventStart +"</p>")
         $("body").append("<p class='offset-lg-4'>'Ends at'"+ eventEnd +"</p>")
         $("body").append("<a class='offset-lg-5' target='_blank' href=" + eventUrl + "> Visit EventBrite</a>" )
+            },2000)
         }
         else {
-        $("body").append("<h2>'Your movie for Tonight is")
+            setTimeout(function(){
+                $("body").append("<h2  class='offset-lg-4'>Your movie for Tonight is")
+            },500)
+            setTimeout(function(){
         $("body").append("<h2 class='offset-lg-4'>"+ movieName +"</h2>");
         $("body").append("<img class='dataPic offset-lg-4' src=" + posterURL + ">")
         $("body").append("<br>")
         $("body").append("<p class='offset-lg-4'>"+ movieDescription +"</p>")
         $("body").append("<p class='offset-lg-4'>'Rated: '"+ movieRating +"</p>")
         $("body").append("<a class='offset-lg-5' target='_blank' href=" + movieTicketURL + "> Visit Yelp Page </a>" )
+            },2000)
         
     }
     }
