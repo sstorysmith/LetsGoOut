@@ -107,14 +107,17 @@ let hungryQuestion = function () {
 
     function displayFoodOptions(){
         $("#food").append("<h4>Your Restaurant for tonight is</h4>")
+        setTimeout(function() {
         $("#food").append("<h4>"+ restaurantName +"</h4>");
         $("#food").append("<img class='dataPic' src=" + restaurantImage_url + ">")
         $("#food").append("<br>")
         $("#food").append("<a class='target='_blank' href=" + restaurant_url + "> Visit Yelp Page </a>" )
+        },1500)
     }
 
     function displayEventOptions(){
-            $("#event").append("<h4>'Your event for Tonight is</h4>")
+            $("#event").append("<h4>Your event for Tonight is</h4>")
+            setTimeout(function() {
             $("#event").append("<h2>"+ eventName +"</h2>");
             $("#event").append("<img class='dataPic' src=" + eventimageUrl + ">")
             $("#event").append("<br>")
@@ -122,16 +125,20 @@ let hungryQuestion = function () {
             $("#event").append("<p'>'Starts at'"+ eventStart +"</p>")
             $("#event").append("<p'>'Ends at'"+ eventEnd +"</p>")
             $("#event").append("<a class='target='_blank' href=" + eventUrl + "> Visit EventBrite</a>" )
+            },1500)
     }
 
     function displayMovieOptions(){
         $("#event").append("<h4>Your movie for Tonight is</h4>")
+        setTimeout(function() {
         $("#event").append("<h2>"+ movieName +"</h2>");
         $("#event").append("<img class='dataPic' src=" + posterURL + ">")
         $("#event").append("<br>")
         $("#event").append("<p'>"+ movieDescription +"</p>")
         $("#event").append("<p'>'Rated: '"+ movieRating +"</p>")
         $("#event").append("<a class='target='_blank' href=" + movieTicketURL + "> Get Your Ticket </a>" )
+        },1500)
+
     }
 
 
@@ -162,7 +169,9 @@ let hungryQuestion = function () {
                 console.log(restaurantName);
                 console.log(restaurant_url);
                 console.log( restaurantImage_url);
+                setTimeout(function(){
                 displayFoodOptions();
+                },3500)
         
             }
          });      
@@ -211,7 +220,9 @@ let hungryQuestion = function () {
                     console.log(movieTicketURL);
        
                    }
+                   setTimeout(function() {
                    displayMovieOptions()
+                   },500)
             });
     
     
@@ -246,7 +257,9 @@ let hungryQuestion = function () {
                     console.log(eventEnd);
                     console.log(eventUrl)
                     console.log(eventimageUrl)
+                    setTimeout(function(){
                     displayEventOptions()
+                    },500)
         
             });
         
