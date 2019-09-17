@@ -1,18 +1,22 @@
 /* custom styles */
 body {
-    /* background: url("../images/street.jpg") no-repeat center ; */
-    background-size: cover;
-    color:black;
-
+    background: url("../images/bg.jpg");
+    color:white;
+    overflow-x: hidden;
 }
-#main {
+@media only screen and (min-width: 1025px) {
+    body {
+        background-size: cover;
+    }
+  }
+/* #main {
     text-align: center;
     font-size: 35px;
     color: black
 }
 #head {
     z-index: 5;
-}
+} */
 button {
     background-color: green;
     margin-right: 10px
@@ -22,4 +26,14 @@ button {
     width: auto; 
 }
 
+.padd-top{
+    padding-top: 20px;
+}
 
+.padd-bottom{
+    padding-bottom: 20px;
+}
+
+.span6{
+    padding: 30px!important;
+}
