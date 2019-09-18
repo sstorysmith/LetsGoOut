@@ -42,7 +42,8 @@ $(document).ready(function(){
         }else{
             localStorage.setItem("location", $("#location").val().trim())
             $("#homepage").empty();
-            hungryQuestion();
+            // hungryQuestion();
+            eventType();
         }
         // searchEventBrite();
         // searchYelp();
@@ -55,8 +56,8 @@ $(document).ready(function(){
 
 
 let hungryQuestion = function () {
-    let yesBtn = `<button class="btn btn-md btn-primary" id="yes1">YES</button>`;
-    let noBtn = `<button class="btn btn-md btn-danger" id="no1">NO</button>`;
+    let yesBtn = `<button class="btn btn-md btn-secondary" id="yes1">YES <i class="fas fa-thumbs-up"></i></button>`;
+    let noBtn = `<button class="btn btn-md btn-secondary" id="no1">NO <i class="fas fa-thumbs-down"></i></button>`;
     $("#homepage").hide();
     $("#questions-box").append("<h2>Are You Hungry?</h2>");
     $("#questions-box").append("<br>");
@@ -64,42 +65,55 @@ let hungryQuestion = function () {
     $('#yes1').on("click", function(){
         hungry = true;
         console.log(hungry);
-        eventType();
+
+        $("#questions-box").hide();
+            if(movie){
+                searchMovies();
+            }else{
+                searchEventBrite();
+            }
+            if(hungry){
+                searchYelp();
+            }
     })
     $('#no1').on("click", function(){
         hungry = false;
         console.log(hungry);
-        eventType();
+     
+        $("#questions-box").hide();
+        if(movie){
+            searchMovies();
+        }else{
+            searchEventBrite();
+        }
+        if(hungry){
+            searchYelp();
+        }
     })
 }
 
     let eventType = function () {
-        let movieBtn = `<button class="btn btn-md btn-secondary" id="movie">Movie</button>`;
-        let showBtn = `<button class="btn btn-md btn-secondary" id="show">Show</button>`;
+        let movieBtn = `<button class="btn btn-lg btn-secondary" id="movie">Movie <i class="fas fa-film"></i></button>`;
+        let showBtn = `<button class="btn btn-lg btn-secondary" id="show">Event <i class="fas fa-theater-masks"></i></button>`;
         $("#questions-box").empty();
-        $("#questions-box").append("<h2>Movie or a Show?</h2>");
+        $("#questions-box").append("<h2>Would you preffer a Movie or an Event?</h2>");
         $("#questions-box").append("<br>");
         $("#questions-box").append(movieBtn, showBtn);
         $('#movie').on("click", function(){
             movie = true;
             console.log(movie)
+            $("#questions-box").empty();
+            hungryQuestion()
             // displayFood();
-            $("#questions-box").hide();
-            searchMovies();
-            if(hungry){
-                searchYelp();
-            }
+            
     
         })
         $('#show').on("click", function(){
             movie = false;
             console.log(movie);
             // displayFood ();
-            $("#questions-box").hide();
-            searchEventBrite();
-            if(hungry){
-                searchYelp();
-            }
+            $("#questions-box").empty();
+            hungryQuestion()
 
         })
     }
@@ -110,8 +124,8 @@ let hungryQuestion = function () {
         setTimeout(function() {
         $("#food").append("<h4>"+ restaurantName +"</h4>");
         $("#food").append("<img class='dataPic' src=" + restaurantImage_url + ">")
-        $("#food").append("<br>")
-        $("#food").append("<a class='target='_blank' href=" + restaurant_url + "> Visit Yelp Page </a>" )
+        $("#food").append("<br><br>")
+        $("#food").append(`<a target="_blank" href="${restaurant_url}"><button class="btn btn-danger">Visit Yelp Page <i class="fab fa-yelp"></i></button></a>`)
         },1500)
     }
 
@@ -124,7 +138,7 @@ let hungryQuestion = function () {
             $("#event").append("<p'>"+ eventDescription +"</p>")
             $("#event").append("<p'>'Starts at'"+ eventStart +"</p>")
             $("#event").append("<p'>'Ends at'"+ eventEnd +"</p>")
-            $("#event").append("<a class='target='_blank' href=" + eventUrl + "> Visit EventBrite</a>" )
+            $("#event").append(`<a target="_blank" href="${eventUrl}"><button class="btn btn-secondary">View More Details <i class="fas fa-info-circle"></i></button></a>`)
             },1500)
     }
 
@@ -136,7 +150,7 @@ let hungryQuestion = function () {
         $("#event").append("<br>")
         $("#event").append("<p'>"+ movieDescription +"</p>")
         $("#event").append("<p'>'Rated: '"+ movieRating +"</p>")
-        $("#event").append("<a class='target='_blank' href=" + movieTicketURL + "> Get Your Ticket </a>" )
+        $("#event").append(`<a target="_blank" href="${movieTicketURL}"><button class="btn btn-success">Get Your Tickets <i class="fa fa-ticket"></i></button> </a>` )
         },1500)
 
     }
@@ -199,7 +213,7 @@ let hungryQuestion = function () {
                 movieName = response[randomMovie].title;
                 movieDescription = response[randomMovie].shortDescription;
                 posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
-                // movieRating = response[randomMovie].ratings[0].code
+                movieRating = response[randomMovie].ratings[0].code
                 
                 let showtimesArray = response[randomMovie].showtimes;
     
