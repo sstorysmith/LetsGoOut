@@ -96,7 +96,7 @@ let hungryQuestion = function () {
         let movieBtn = `<button class="btn btn-lg btn-secondary" id="movie">Movie <i class="fas fa-film"></i></button>`;
         let showBtn = `<button class="btn btn-lg btn-secondary" id="show">Event <i class="fas fa-theater-masks"></i></button>`;
         $("#questions-box").empty();
-        $("#questions-box").append("<h2>Would you preffer a Movie or an Event?</h2>");
+        $("#questions-box").append("<h2>Would you prefer a Movie or an Event?</h2>");
         $("#questions-box").append("<br>");
         $("#questions-box").append(movieBtn, showBtn);
         $('#movie').on("click", function(){
