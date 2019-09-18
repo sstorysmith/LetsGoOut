@@ -133,7 +133,12 @@ let hungryQuestion = function () {
         
             $("#event").append("<h4>Your event for Tonight is</h4>")
             setTimeout(function() {
-            $("#event").append("<h2>"+ eventName +"</h2>");
+            if(new String(eventName).length>75){
+                trimmedEventName = eventName.substring(0,75)
+                $("#event").append("<h2>"+ trimmedEventName +"...</h2>");
+            }else{
+                $("#event").append("<h2>"+ eventName +"</h2>");
+            }
             $("#event").append("<img class='dataPic' src=" + eventimageUrl + ">")
             $("#event").append("<br>")
          //   trimmedEventDescription = eventDescription.substring(0,100)
