@@ -137,7 +137,7 @@ let hungryQuestion = function () {
             $("#event").append("<img class='dataPic' src=" + eventimageUrl + ">")
             $("#event").append("<br>")
          //   trimmedEventDescription = eventDescription.substring(0,100)
-            if(eventDescription.length > 300 ){
+            if(new String(eventDescription).length > 300 ){
                 trimmedEventDescription = eventDescription.substring(0,300)
                 $("#event").append("<p'>"+ trimmedEventDescription +"...</p>")
             }else{
