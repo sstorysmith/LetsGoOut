@@ -18,7 +18,9 @@ let movieName;
 let movieDescription;
 let movieRating;
 let posterURL;
-let movieTicketURL
+let movieTicketURL;
+let eventcount = 0
+let foodcount = 0
 
 $(document).ready(function(){
     // event brite API Key: NYPPF5ZFS2WQZMMQSIJJ
@@ -155,7 +157,31 @@ let hungryQuestion = function () {
 
     }
 
+    function foodRetry() {
+        let newFoodBtn = `<button class="btn btn-md btn-success" id="foodbtn">Retry<i class="fas fa-dice"></i></button>`;
+        $("#food").append(newFoodBtn);
+        $("#foodbtn").on("click",function() {
+            $("#food").empty();
+            searchYelp();
+            $("foodbtn").remove()
+        })
+    }
 
+    function eventRetry() {
+        let newEventBtn = `<button class="btn btn-md btn-success" id="eventbtn">Retry<i class="fas fa-dice"></i></button>`;
+        $("#event").append(newEventBtn);
+        $("#eventbtn").on("click",function() {
+            $("#event").empty();
+            if (movie) {
+            searchMovies()
+            $("eventbtn").remove()
+            }
+            else {
+            searchEventBrite();
+            $("eventbtn").remove()
+            }
+        })
+    }
 
 
     ///AJAX CALLS, SEARCH YELP, SEARCH MOVIES, SEARCH EVENTBRIGHT
@@ -186,6 +212,12 @@ let hungryQuestion = function () {
                 setTimeout(function(){
                 displayFoodOptions();
                 },3500)
+                if (foodcount < 1 ) {
+                    setTimeout(function() {
+                     foodRetry()
+                    },9000)
+                 }
+                    foodcount++
         
             }
          });      
@@ -237,6 +269,14 @@ let hungryQuestion = function () {
                    setTimeout(function() {
                    displayMovieOptions()
                    },500)
+
+                   if (eventcount < 1 ) {
+                   setTimeout(function() {
+                    eventRetry()
+                   },9000)
+                }
+                   eventcount++
+
             });
     
     
@@ -274,7 +314,12 @@ let hungryQuestion = function () {
                     setTimeout(function(){
                     displayEventOptions()
                     },500)
-        
+                    if (eventcount < 1 ) {
+                        setTimeout(function() {
+                         eventRetry()
+                        },9000)
+                     }
+                    eventcount++
             });
         
         
