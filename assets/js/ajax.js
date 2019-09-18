@@ -116,12 +116,19 @@ let hungryQuestion = function () {
     }
 
     function displayEventOptions(){
+        
             $("#event").append("<h4>Your event for Tonight is</h4>")
             setTimeout(function() {
             $("#event").append("<h2>"+ eventName +"</h2>");
             $("#event").append("<img class='dataPic' src=" + eventimageUrl + ">")
             $("#event").append("<br>")
-            $("#event").append("<p'>"+ eventDescription +"</p>")
+         //   trimmedEventDescription = eventDescription.substring(0,100)
+            if(eventDescription.length > 300 ){
+                trimmedEventDescription = eventDescription.substring(0,300)
+                $("#event").append("<p'>"+ trimmedEventDescription +"...</p>")
+            }else{
+                $("#event").append("<p'>"+ eventDescription +"</p>")
+            }
             $("#event").append("<p'>'Starts at'"+ eventStart +"</p>")
             $("#event").append("<p'>'Ends at'"+ eventEnd +"</p>")
             $("#event").append("<a class='target='_blank' href=" + eventUrl + "> Visit EventBrite</a>" )
