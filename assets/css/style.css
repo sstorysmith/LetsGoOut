@@ -37,3 +37,8 @@ button {
 .span6{
     padding: 30px!important;
 }
+#title {
+    font-family: 'Parisienne', cursive;
+    font-size: 60px;
+    word-spacing: 15px
+}
