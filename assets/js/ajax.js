@@ -61,7 +61,7 @@ let hungryQuestion = function () {
     let yesBtn = `<button class="btn btn-md btn-secondary" id="yes1">YES <i class="fas fa-thumbs-up"></i></button>`;
     let noBtn = `<button class="btn btn-md btn-secondary" id="no1">NO <i class="fas fa-thumbs-down"></i></button>`;
     $("#homepage").hide();
-    $("#questions-box").append("<h2>Are You Hungry?</h2>");
+    $("#questions-box").append("<h2 class = prompts>Are You Hungry?</h2>");
     $("#questions-box").append("<br>");
     $("#questions-box").append(yesBtn, noBtn);
     $('#yes1').on("click", function(){
@@ -98,7 +98,8 @@ let hungryQuestion = function () {
         let movieBtn = `<button class="btn btn-lg btn-secondary" id="movie">Movie <i class="fas fa-film"></i></button>`;
         let showBtn = `<button class="btn btn-lg btn-secondary" id="show">Event <i class="fas fa-theater-masks"></i></button>`;
         $("#questions-box").empty();
-        $("#questions-box").append("<h2>Would you preffer a Movie or an Event?</h2>");
+        $("#questions-box").append("<h2 class = prompts>Would you preffer a Movie or an Event?</h2>");
+
         $("#questions-box").append("<br>");
         $("#questions-box").append(movieBtn, showBtn);
         $('#movie').on("click", function(){
@@ -122,7 +123,7 @@ let hungryQuestion = function () {
 
 
     function displayFoodOptions(){
-        $("#food").append("<h4>Your Restaurant for tonight is</h4>")
+        $("#food").append("<h4 class = results>Your Restaurant for tonight is</h4>")
         setTimeout(function() {
         $("#food").append("<h4>"+ restaurantName +"</h4>");
         $("#food").append("<img class='dataPic' src=" + restaurantImage_url + ">")
@@ -132,12 +133,24 @@ let hungryQuestion = function () {
     }
 
     function displayEventOptions(){
-            $("#event").append("<h4>Your event for Tonight is</h4>")
+        
+            $("#event").append("<h4 class = results>Your event for Tonight is</h4>")
             setTimeout(function() {
-            $("#event").append("<h2>"+ eventName +"</h2>");
+            if(new String(eventName).length>75){
+                trimmedEventName = eventName.substring(0,75)
+                $("#event").append("<h2>"+ trimmedEventName +"...</h2>");
+            }else{
+                $("#event").append("<h2>"+ eventName +"</h2>");
+            }
             $("#event").append("<img class='dataPic' src=" + eventimageUrl + ">")
             $("#event").append("<br>")
-            $("#event").append("<p'>"+ eventDescription +"</p>")
+         //   trimmedEventDescription = eventDescription.substring(0,100)
+            if(new String(eventDescription).length > 300 ){
+                trimmedEventDescription = eventDescription.substring(0,300)
+                $("#event").append("<p'>"+ trimmedEventDescription +"...</p>")
+            }else{
+                $("#event").append("<p'>"+ eventDescription +"</p>")
+            }
             $("#event").append("<p'>'Starts at'"+ eventStart +"</p>")
             $("#event").append("<p'>'Ends at'"+ eventEnd +"</p>")
             $("#event").append(`<a target="_blank" href="${eventUrl}"><button class="btn btn-secondary">View More Details <i class="fas fa-info-circle"></i></button></a>`)
@@ -145,7 +158,7 @@ let hungryQuestion = function () {
     }
 
     function displayMovieOptions(){
-        $("#event").append("<h4>Your movie for Tonight is</h4>")
+        $("#event").append("<h4 class = results>Your movie for Tonight is</h4>")
         setTimeout(function() {
         $("#event").append("<h2>"+ movieName +"</h2>");
         $("#event").append("<img class='dataPic' src=" + posterURL + ">")
