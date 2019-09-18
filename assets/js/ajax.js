@@ -59,7 +59,7 @@ let hungryQuestion = function () {
     let yesBtn = `<button class="btn btn-md btn-secondary" id="yes1">YES <i class="fas fa-thumbs-up"></i></button>`;
     let noBtn = `<button class="btn btn-md btn-secondary" id="no1">NO <i class="fas fa-thumbs-down"></i></button>`;
     $("#homepage").hide();
-    $("#questions-box").append("<h2>Are You Hungry?</h2>");
+    $("#questions-box").append("<h2 class = prompts>Are You Hungry?</h2>");
     $("#questions-box").append("<br>");
     $("#questions-box").append(yesBtn, noBtn);
     $('#yes1').on("click", function(){
@@ -96,7 +96,7 @@ let hungryQuestion = function () {
         let movieBtn = `<button class="btn btn-lg btn-secondary" id="movie">Movie <i class="fas fa-film"></i></button>`;
         let showBtn = `<button class="btn btn-lg btn-secondary" id="show">Event <i class="fas fa-theater-masks"></i></button>`;
         $("#questions-box").empty();
-        $("#questions-box").append("<h2>Would you preffer a Movie or an Event?</h2>");
+        $("#questions-box").append("<h2 class = prompts>Would you preffer a Movie or an Event?</h2>");
         $("#questions-box").append("<br>");
         $("#questions-box").append(movieBtn, showBtn);
         $('#movie').on("click", function(){
@@ -120,7 +120,7 @@ let hungryQuestion = function () {
 
 
     function displayFoodOptions(){
-        $("#food").append("<h4>Your Restaurant for tonight is</h4>")
+        $("#food").append("<h4 class = results>Your Restaurant for tonight is</h4>")
         setTimeout(function() {
         $("#food").append("<h4>"+ restaurantName +"</h4>");
         $("#food").append("<img class='dataPic' src=" + restaurantImage_url + ">")
@@ -131,7 +131,7 @@ let hungryQuestion = function () {
 
     function displayEventOptions(){
         
-            $("#event").append("<h4>Your event for Tonight is</h4>")
+            $("#event").append("<h4 class = results>Your event for Tonight is</h4>")
             setTimeout(function() {
             if(new String(eventName).length>75){
                 trimmedEventName = eventName.substring(0,75)
@@ -155,7 +155,7 @@ let hungryQuestion = function () {
     }
 
     function displayMovieOptions(){
-        $("#event").append("<h4>Your movie for Tonight is</h4>")
+        $("#event").append("<h4 class = results>Your movie for Tonight is</h4>")
         setTimeout(function() {
         $("#event").append("<h2>"+ movieName +"</h2>");
         $("#event").append("<img class='dataPic' src=" + posterURL + ">")
