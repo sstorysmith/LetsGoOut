@@ -97,6 +97,7 @@ let hungryQuestion = function () {
         let showBtn = `<button class="btn btn-lg btn-secondary" id="show">Event <i class="fas fa-theater-masks"></i></button>`;
         $("#questions-box").empty();
         $("#questions-box").append("<h2 class = prompts>Would you preffer a Movie or an Event?</h2>");
+
         $("#questions-box").append("<br>");
         $("#questions-box").append(movieBtn, showBtn);
         $('#movie').on("click", function(){
