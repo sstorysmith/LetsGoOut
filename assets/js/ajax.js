@@ -170,7 +170,7 @@ let hungryQuestion = function () {
     }
 
     function foodRetry() {
-        let newFoodBtn = `<button class="btn btn-md btn-success" id="foodbtn">Retry<i class="fas fa-dice"></i></button>`;
+        let newFoodBtn = `<button class="btn btn-md btn-primary" id="foodbtn">Re-Roll<i class="fas fa-dice"></i></button>`;
         $("#food").append(newFoodBtn);
         $("#foodbtn").on("click",function() {
             $("#food").empty();
@@ -180,7 +180,7 @@ let hungryQuestion = function () {
     }
 
     function eventRetry() {
-        let newEventBtn = `<button class="btn btn-md btn-success" id="eventbtn">Retry<i class="fas fa-dice"></i></button>`;
+        let newEventBtn = `<button class="btn btn-md btn-primary" id="eventbtn">Re-roll<i class="fas fa-dice"></i></button>`;
         $("#event").append(newEventBtn);
         $("#eventbtn").on("click",function() {
             $("#event").empty();
