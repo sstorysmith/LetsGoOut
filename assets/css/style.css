@@ -22,8 +22,9 @@ button {
     margin-right: 10px
 }
 .dataPic {
-    height: 250px;
-    width: auto; 
+    /* height: 250px;
+    width: auto;  */
+    width: 200px;
 }
 
 .padd-top{
@@ -39,8 +40,8 @@ button {
 }
 #title {
     font-family: 'Parisienne', cursive;
-    font-size: 60px;
-    word-spacing: 15px
+    font-size: 50px;
+    /* word-spacing: 15px */
 }
 
 .results {
@@ -57,3 +58,13 @@ button {
 }
 
 
+.dotted-line{
+    border-style: dashed;
+    border-width: 5px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.btn-secondary{
+    margin-bottom: 10px;
+}
