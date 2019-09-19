@@ -42,3 +42,16 @@ button {
     font-size: 60px;
     word-spacing: 15px
 }
+
+.results {
+    
+    font-weight: bold;
+    color:lightgreen;
+    
+}
+.prompts {
+    font-weight: bold;
+    color:lightgreen;
+}
+
+
