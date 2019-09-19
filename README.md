@@ -1,1 +1,4 @@
 # LetsGoOut
+Lets Go Out is designed to help create a spontanious night of excitement and entertainment. It gives recommendations to users who are looking for a fun night out on the town by asking them whether they are looking for a movie or event, and if they are hungry and want to eat out. Once the user answers the questions they are given their options which also have links for further details. The user also has the option to retry either their food option or event and get a new option. 
+The idea behind this project is too help people who want to do something interesting but are not sure what to do. Whether they are just bored and want to check out their local nightlife, or visiting from out of town and dont know the area well, Lets Go Out is designed to make their desicions of what to do easier. 
+This project was created by, Erwin Angeles, Sharon Story Smith, Kevin Cowan, Dan McCarthy, and Chris Gilliam. 
