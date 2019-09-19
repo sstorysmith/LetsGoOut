@@ -257,8 +257,7 @@ let hungryQuestion = function () {
                 movieName = response[randomMovie].title;
                 movieDescription = response[randomMovie].shortDescription;
                 posterURL = "https://cuso.tmsimg.com/" + response[randomMovie].preferredImage.uri 
-                movieRating = response[randomMovie].ratings[0].code
-                
+                // movieRating = response[randomMovie].ratings[0].code
                 let showtimesArray = response[randomMovie].showtimes;
     
              
@@ -315,7 +314,12 @@ let hungryQuestion = function () {
                     eventStart = response[randomEvent].start.local;
                     eventEnd = response[randomEvent].end.local;
                     eventUrl = response[randomEvent].url;
-                    eventimageUrl = response[randomEvent].logo.original.url
+                    if(response[randomEvent].logo == null){
+                       alert("image doesnt exit for event")
+                    }else{
+                        eventimageUrl = response[randomEvent].logo.original.url
+                    }
+                  
         
                     console.log(eventName);
                     console.log(eventDescription);
