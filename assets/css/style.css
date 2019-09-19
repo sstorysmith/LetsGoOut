@@ -46,12 +46,14 @@ button {
 .results {
     
     font-weight: bold;
-    color:lightgreen;
+    color:#28a745
+    ;
     
 }
 .prompts {
     font-weight: bold;
-    color:lightgreen;
+    color:#28a745
+    ;
 }
 
 
