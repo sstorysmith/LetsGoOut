@@ -138,7 +138,7 @@ let hungryQuestion = function () {
         $("#food").append("<h4>"+ restaurantName +"</h4>");
         $("#food").append("<img class='dataPic' src=" + restaurantImage_url + ">")
         $("#food").append("<br><br>")
-        $("#food").append(`<a target="_blank" href="${restaurant_url}"><button class="btn btn-danger">Visit Yelp Page <i class="fab fa-yelp"></i></button></a>`, newFoodBtn)
+        $("#food").append(`<a target="_blank" href="${restaurant_url}"><button class="btn btn-danger">Visit Yelp <i class="fab fa-yelp"></i></button></a>`, newFoodBtn)
         },1500)
 
         setTimeout(function() {
