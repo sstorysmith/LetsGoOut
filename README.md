@@ -1,4 +1,42 @@
-# LetsGoOut
-Lets Go Out is designed to help create a spontanious night of excitement and entertainment. It gives recommendations to users who are looking for a fun night out on the town by asking them whether they are looking for a movie or event, and if they are hungry and want to eat out. Once the user answers the questions, they are given their options which also have links for further details. The user also has the option to retry either their food option or event and get a new option. 
-The idea behind this project is too help people who want to do something interesting but are not sure what to do. Whether they are just bored and want to check out their local nightlife, or visiting from out of town and dont know the area well, Lets Go Out is designed to make their desicions of what to do easier. 
-This project was created by, Erwin Angeles, Sharon Story Smith, Kevin Cowan, Dan McCarthy, and Chris Gilliam. 
+Let's Go Out
+Fall 2019
+Dan McCarthy
+Chris Gilliam
+Erwin Angeles
+Kevin Cowan
+Sharon Story Smith   storysmithsharon@gmail.com
+
+Uses: Bootstrap, jQuery, APIs.
+
+Screen Shot:
+    ![screenshot of Let's Go Out](.\PrintScreen.jpg)
+    ![screenshot of Let's Go Out](.\PrintScreen2.jpg)
+     
+Working Demo:
+    ** Event function doesn't display results.
+    ** Movie function doesn't display results.
+    ** Hungry "yes" does work.
+    ![working demo of Let's Go Out](https://erwinangeles.github.io/LetsGoOut//)
+    
+
+Developer: Download Code and open index.html in a browser.
+
+Overview:
+    Lets Go Out helps to organize an exciting and spontaneous night out on the town.
+    Experience all that local nightlife has to offer! Whether it's a dinner and a concert, or catching a movie and some drinks.  
+        
+App Design:
+    Once the DOM is loaded, code begins executing. Location (Zip Code) is set by a call to Google Maps OR an override by the user. Zipcode is used to query the local nightlife and random selections are made based on answered questions. APIs: Eeventbrite, Fandango, Yelp, Google Maps, TMS Movie. A "submit" button will kick off the logic.
+    A photo of the venue is displayed:
+        If user doesn't like the recommendation presented, there's a "re-roll" button to click.
+        If user does like the recommendation, there's a "yelp" button to display reviews. There's also a map displayed of the venue.
+    Moments.js is used to set and convert time values.
+
+    ** Event function doesn't display results.
+    ** Movie function doesn't display results.
+    ** Hungry "yes" does work.
+
+  
+
+
+
