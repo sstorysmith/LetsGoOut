@@ -16,7 +16,7 @@ Working Demo:
     ** Event function doesn't display results.
     ** Movie function doesn't display results.
     ** Hungry "yes" does work.
-    ![working demo of Let's Go Out](https://erwinangeles.github.io/LetsGoOut//)
+    ![working demo of Let's Go Out](https://sstorysmith.github.io/LetsGoOut/)
     
 
 Developer: Download Code and open index.html in a browser.
