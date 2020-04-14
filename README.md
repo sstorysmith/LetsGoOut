@@ -9,8 +9,8 @@ Sharon Story Smith   storysmithsharon@gmail.com
 Uses: Bootstrap, jQuery, APIs.
 
 Screen Shot:
-    [screenshot of Let's Go Out](PrintScreen.jpg)
-    [screenshot of Let's Go Out](PrintScreen2.jpg)
+    [screenshot of Let's Go Out](PrintScreen.png)    
+    [screenshot of Let's Go Out](PrintScreen2.png)
      
 Working Demo:
     ** Event function doesn't display results.
