@@ -9,14 +9,14 @@ Sharon Story Smith   storysmithsharon@gmail.com
 Uses: Bootstrap, jQuery, APIs.
 
 Screen Shot:
-    ![screenshot of Let's Go Out](.\PrintScreen.jpg)
-    ![screenshot of Let's Go Out](.\PrintScreen2.jpg)
+    [screenshot of Let's Go Out](PrintScreen.jpg)
+    [screenshot of Let's Go Out](PrintScreen2.jpg)
      
 Working Demo:
     ** Event function doesn't display results.
     ** Movie function doesn't display results.
     ** Hungry "yes" does work.
-    ![working demo of Let's Go Out](https://sstorysmith.github.io/LetsGoOut/)
+    [working demo of Let's Go Out](https://sstorysmith.github.io/LetsGoOut/)
     
 
 Developer: Download Code and open index.html in a browser.
