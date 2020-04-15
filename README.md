@@ -1,5 +1,4 @@
-Let's Go Out
-
+Let's Go Out  
 Fall 2019  
 Dan McCarthy  
 Chris Gilliam  
@@ -9,11 +8,11 @@ Sharon Story Smith   storysmithsharon@gmail.com
 
 Uses: Bootstrap, jQuery, APIs.  
 
-Screen Shot:  
-    [screenshot 1] (PrintScreen.png)      
-    [screenshot 2] (PrintScreen2.png)
+Screen Shot:    
+    [screenshot 1](PrintScreen.png)      
+    [screenshot 2](PrintScreen2.png)
      
-Working Demo:  
+Working Demo:    
     ** Event function doesn't display results.  
     ** Movie function doesn't display results.  
     ** Hungry "yes" does work.  
